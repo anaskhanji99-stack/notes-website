@@ -1,0 +1,270 @@
+<!-- ========================= -->
+<!-- FILE 1 = book1.html -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English First Book</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#060816;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:#00f0ff;
+filter:blur(180px);
+top:-150px;
+left:-100px;
+opacity:0.25;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:450px;
+height:450px;
+background:#8b5cf6;
+filter:blur(180px);
+bottom:-150px;
+right:-100px;
+opacity:0.25;
+z-index:-1;
+}
+
+nav{
+width:100%;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:#00f0ff;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+margin-left:30px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00f0ff;
+}
+
+.hero{
+width:100%;
+min-height:60vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px 8%;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+background:linear-gradient(to right,#00f0ff,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+color:#cbd5e1;
+font-size:20px;
+line-height:1.8;
+}
+
+.chapters{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:50px;
+margin-bottom:70px;
+color:#00f0ff;
+}
+
+.chapter-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.chapter-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:30px;
+padding:40px 30px;
+transition:0.5s;
+}
+
+.chapter-card:hover{
+transform:translateY(-10px);
+border-color:#00f0ff;
+box-shadow:0 0 30px rgba(0,255,255,0.25);
+}
+
+.chapter-card h2{
+font-size:30px;
+color:#00f0ff;
+margin-bottom:20px;
+}
+
+.chapter-card p{
+line-height:1.8;
+margin-bottom:30px;
+color:#d1d5db;
+}
+
+.open-btn{
+display:inline-block;
+padding:12px 25px;
+border-radius:30px;
+background:linear-gradient(45deg,#00f0ff,#0077ff);
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:60px;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">FIRST BOOK</div>
+
+<div class="nav-links">
+
+<a href="../../index.html">Home</a>
+<a href="index.html">English</a>
+<a href="#chapters">Chapters</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>English First Book</h1>
+
+<p>
+Class 12th English Flamingo book chapters,
+notes aur important question answers.
+</p>
+
+</div>
+
+</section>
+
+<section class="chapters" id="chapters">
+
+<h1 class="section-title">Book Chapters</h1>
+
+<div class="chapter-grid">
+
+<div class="chapter-card">
+<h2>The Last Lesson</h2>
+<p>Summary aur important question answers.</p>
+<a href="chapters/The Last Lesson.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>Lost Spring</h2>
+<p>Detailed explanation aur notes.</p>
+<a href="chapters/Lost Spring.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>Deep Water</h2>
+<p>Full chapter explanation aur questions.</p>
+<a href="chapters/Deep Water.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>The Rattrap</h2>
+<p>Important notes aur summaries.</p>
+<a href="chapters/The Rattrap.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>Indigo</h2>
+<p>Exam notes aur detailed answers.</p>
+<a href="chapters/Indigo.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>Poets and Pancakes</h2>
+<p>Important explanations aur notes.</p>
+<a href="chapters/Poets and Pancakes.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>The Interview</h2>
+<p>Question answers aur summaries.</p>
+<a href="chapters/The Interview.html" class="open-btn">Open</a>
+</div>
+
+<div class="chapter-card">
+<h2>Going Places</h2>
+<p>Important chapter notes aur answers.</p>
+<a href="chapters/Going Places.html" class="open-btn">Open</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 English Notes Website
+</footer>
+
+</body>
+</html>

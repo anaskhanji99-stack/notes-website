@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>English Subject</title>
+  <title>Flamingo Poetry</title>
 
-  <!-- Google Font -->
+  <!-- Fonts -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -17,17 +17,17 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
       scroll-behavior:smooth;
     }
 
     body{
-      background:#060816;
+      background:#050816;
       color:white;
+      font-family:'Poppins',sans-serif;
       overflow-x:hidden;
     }
 
-    /* Animated Background */
+    /* Background */
 
     body::before{
       content:'';
@@ -38,7 +38,7 @@
       filter:blur(180px);
       top:-150px;
       left:-100px;
-      opacity:0.25;
+      opacity:0.20;
       z-index:-1;
       animation:float1 8s infinite alternate;
     }
@@ -48,11 +48,11 @@
       position:fixed;
       width:450px;
       height:450px;
-      background:#8b5cf6;
+      background:#ff00d4;
       filter:blur(180px);
       bottom:-150px;
       right:-100px;
-      opacity:0.25;
+      opacity:0.20;
       z-index:-1;
       animation:float2 8s infinite alternate;
     }
@@ -95,11 +95,11 @@
     }
 
     .logo{
-      font-size:32px;
-      font-weight:700;
+      font-size:28px;
+      font-family:'Orbitron',sans-serif;
       color:#00f0ff;
+      font-weight:700;
       text-shadow:0 0 20px #00f0ff;
-      letter-spacing:2px;
     }
 
     .nav-links a{
@@ -118,14 +118,15 @@
 
     .hero{
       width:100%;
-      min-height:80vh;
+      min-height:55vh;
 
       display:flex;
       justify-content:center;
       align-items:center;
 
-      padding:60px 8%;
       text-align:center;
+
+      padding:60px 8%;
     }
 
     .hero-content{
@@ -133,9 +134,10 @@
     }
 
     .hero h1{
-      font-size:75px;
-      line-height:1.2;
+      font-size:70px;
       margin-bottom:25px;
+
+      font-family:'Orbitron',sans-serif;
 
       background:linear-gradient(to right,#00f0ff,#ffffff);
       -webkit-background-clip:text;
@@ -144,56 +146,32 @@
 
     .hero p{
       color:#cbd5e1;
-      font-size:21px;
-      line-height:1.9;
-      margin-bottom:45px;
+      font-size:20px;
+      line-height:2;
     }
 
-    .hero-btn{
-      display:inline-block;
-      text-decoration:none;
+    /* Poems */
 
-      background:linear-gradient(45deg,#00f0ff,#0077ff);
-      color:white;
-
-      padding:16px 38px;
-
-      border-radius:50px;
-
-      font-weight:600;
-
-      transition:0.5s;
-
-      box-shadow:0 0 25px rgba(0,255,255,0.4);
-    }
-
-    .hero-btn:hover{
-      transform:translateY(-5px) scale(1.05);
-      box-shadow:0 0 40px rgba(0,255,255,0.7);
-    }
-
-    /* Section */
-
-    .books{
-      padding:100px 8%;
+    .poems{
+      padding:90px 8%;
     }
 
     .section-title{
       text-align:center;
-      font-size:50px;
+      font-size:48px;
       margin-bottom:70px;
       color:#00f0ff;
     }
 
-    /* Cards */
-
-    .cards{
+    .poem-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
       gap:40px;
     }
 
-    .card{
+    /* Cards */
+
+    .poem-card{
       position:relative;
       overflow:hidden;
 
@@ -205,22 +183,22 @@
 
       border-radius:35px;
 
-      padding:45px 35px;
+      padding:40px 35px;
 
       transition:0.5s;
 
       cursor:pointer;
     }
 
-    .card:hover{
-      transform:translateY(-15px) scale(1.03);
+    .poem-card:hover{
+      transform:translateY(-14px) scale(1.03);
 
       border-color:#00f0ff;
 
       box-shadow:0 0 35px rgba(0,255,255,0.25);
     }
 
-    .card::before{
+    .poem-card::before{
       content:'';
 
       position:absolute;
@@ -236,16 +214,24 @@
       right:-80px;
     }
 
-    .card h2{
-      font-size:36px;
-      margin-bottom:20px;
+    .poem-number{
+      color:#94a3b8;
+      font-size:17px;
+      margin-bottom:12px;
+      position:relative;
+      z-index:1;
+    }
+
+    .poem-card h2{
+      font-size:30px;
       color:#00f0ff;
+      margin-bottom:20px;
 
       position:relative;
       z-index:1;
     }
 
-    .card p{
+    .poem-card p{
       color:#d1d5db;
       line-height:1.9;
       margin-bottom:35px;
@@ -280,51 +266,6 @@
       box-shadow:0 0 20px rgba(0,255,255,0.5);
     }
 
-    /* Features */
-
-    .features{
-      padding:100px 8%;
-    }
-
-    .feature-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-    }
-
-    .feature-box{
-      background:rgba(255,255,255,0.04);
-
-      border:1px solid rgba(255,255,255,0.08);
-
-      border-radius:25px;
-
-      padding:35px;
-
-      text-align:center;
-
-      transition:0.5s;
-    }
-
-    .feature-box:hover{
-      transform:translateY(-10px);
-
-      border-color:#00f0ff;
-
-      box-shadow:0 0 30px rgba(0,255,255,0.15);
-    }
-
-    .feature-box h3{
-      color:#00f0ff;
-      margin-bottom:15px;
-      font-size:26px;
-    }
-
-    .feature-box p{
-      color:#cbd5e1;
-      line-height:1.8;
-    }
-
     /* Footer */
 
     footer{
@@ -332,7 +273,7 @@
 
       padding:40px;
 
-      margin-top:70px;
+      margin-top:60px;
 
       border-top:1px solid rgba(255,255,255,0.08);
 
@@ -345,7 +286,7 @@
     @media(max-width:900px){
 
       .hero h1{
-        font-size:48px;
+        font-size:45px;
       }
 
       .hero p{
@@ -357,7 +298,7 @@
       }
 
       .section-title{
-        font-size:38px;
+        font-size:36px;
       }
 
     }
@@ -372,13 +313,13 @@
 
   <nav>
 
-    <div class="logo">ENGLISH</div>
+    <div class="logo">FLAMINGO POETRY</div>
 
     <div class="nav-links">
 
       <a href="../../index.html">Home</a>
-      <a href="#books">Books</a>
-      <a href="#features">Features</a>
+      <a href="index.html">English</a>
+      <a href="#poems">Poems</a>
 
     </div>
 
@@ -391,136 +332,152 @@
     <div class="hero-content">
 
       <h1>
-        English Study Portal
+        Flamingo Poetry
       </h1>
 
       <p>
-        Chapter wise English grammar, literature,
-        writing skills aur important question answers
-        futuristic modern design ke saath.
+        Class 12th NCERT Flamingo Poetry notes,
+        explanations aur important question answers
+        modern futuristic design ke saath.
       </p>
 
-      <a href="#books" class="hero-btn">
-        Open Books
-      </a>
-
     </div>
 
   </section>
 
-  <!-- Books Section -->
+  <!-- Poems -->
 
-  <section class="books" id="books">
-
-    <h1 class="section-title">
-      English Books
-    </h1>
-
-    <div class="cards">
-
-      <!-- Book 1 -->
-
-      <div class="card">
-
-        <h2>First Book</h2>
-
-        <p>
-          Literature chapters,
-          summaries, explanations aur question answers.
-        </p>
-
-        <a href="book1.html" class="open-btn">
-          Open Book
-        </a>
-
-      </div>
-
-      <!-- Book 2 -->
-
-      <div class="card">
-
-        <h2>Second Book</h2>
-
-        <p>
-          Grammar, writing skills,
-          important questions aur practice notes.
-        </p>
-
-        <a href="book2.html" class="open-btn">
-          Open Book
-        </a>
-
-      </div>
-
-      <!-- Flamingo Poetry -->
-
-      <div class="card">
-
-        <h2>Flamingo Poetry</h2>
-
-        <p>
-          Class 12th NCERT Flamingo Poetry ke
-          summaries, explanations aur important
-          question answers.
-        </p>
-
-        <a href="flamingo-poetry.html" class="open-btn">
-          Open Poetry
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Features -->
-
-  <section class="features" id="features">
+  <section class="poems" id="poems">
 
     <h1 class="section-title">
-      English Features
+      Poetry Chapters
     </h1>
 
-    <div class="feature-container">
+    <div class="poem-grid">
 
-      <div class="feature-box">
+      <!-- Poem 1 -->
 
-        <h3>Chapter Wise Notes</h3>
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 01
+        </div>
+
+        <h2>My Mother at Sixty Six</h2>
 
         <p>
-          Har chapter ka alag detailed section.
+          Summary, explanation,
+          important question answers aur notes.
         </p>
+
+        <a href="chapters/poetry/My Mother at Sixty Six.html" class="open-btn">
+          Open Poem
+        </a>
 
       </div>
 
-      <div class="feature-box">
+      <!-- Poem 2 -->
 
-        <h3>Question Answers</h3>
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 02
+        </div>
+
+        <h2>An Elementary School Classroom in a Slum</h2>
 
         <p>
-          Important exam question answers available.
+          Full explanation,
+          important questions aur detailed notes.
         </p>
+
+        <a href="chapters/poetry/An Elementary School Classroom in a Slum.html" class="open-btn">
+          Open Poem
+        </a>
 
       </div>
 
-      <div class="feature-box">
+      <!-- Poem 3 -->
 
-        <h3>Modern UI</h3>
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 03
+        </div>
+
+        <h2>Keeping Quiet</h2>
 
         <p>
-          Smooth animations aur futuristic glow design.
+          Important notes,
+          meanings aur question answers section.
         </p>
+
+        <a href="chapters/poetry/Keeping Quiet.html" class="open-btn">
+          Open Poem
+        </a>
 
       </div>
 
-      <div class="feature-box">
+      <!-- Poem 4 -->
 
-        <h3>Easy Reading</h3>
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 04
+        </div>
+
+        <h2>A Thing of Beauty</h2>
 
         <p>
-          Clean layout taaki reading comfortable rahe.
+          Detailed summary,
+          explanation aur exam questions.
         </p>
+
+        <a href="chapters/poetry/A Thing of Beauty.html" class="open-btn">
+          Open Poem
+        </a>
+
+      </div>
+
+      <!-- Poem 5 -->
+
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 05
+        </div>
+
+        <h2>A Roadside Stand</h2>
+
+        <p>
+          Full analysis,
+          important points aur notes available.
+        </p>
+
+        <a href="chapters/poetry/A Roadside Stand.html" class="open-btn">
+          Open Poem
+        </a>
+
+      </div>
+
+      <!-- Poem 6 -->
+
+      <div class="poem-card">
+
+        <div class="poem-number">
+          Poem 06
+        </div>
+
+        <h2>Aunt Jennifer Tigers</h2>
+
+        <p>
+          Important question answers,
+          explanation aur summaries.
+        </p>
+
+        <a href="chapters/poetry/Aunt Jennifer Tigers.html" class="open-btn">
+          Open Poem
+        </a>
 
       </div>
 
@@ -532,7 +489,7 @@
 
   <footer>
 
-    © 2026 English Notes Website | Modern Education Platform
+    © 2026 English Notes Website | Flamingo Poetry
 
   </footer>
 
