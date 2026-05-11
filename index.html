@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modern Notes Website</title>
+
+  <!-- Google Font -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#060816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* Animated Background */
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00f0ff;
+      filter:blur(180px);
+      top:-150px;
+      left:-100px;
+      opacity:0.25;
+      z-index:-1;
+      animation:float1 8s infinite alternate;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:450px;
+      height:450px;
+      background:#8b5cf6;
+      filter:blur(180px);
+      bottom:-150px;
+      right:-100px;
+      opacity:0.25;
+      z-index:-1;
+      animation:float2 8s infinite alternate;
+    }
+
+    @keyframes float1{
+      from{
+        transform:translateY(0px);
+      }
+      to{
+        transform:translateY(40px);
+      }
+    }
+
+    @keyframes float2{
+      from{
+        transform:translateY(0px);
+      }
+      to{
+        transform:translateY(-40px);
+      }
+    }
+
+    /* Navbar */
+
+    nav{
+      width:100%;
+      padding:22px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      backdrop-filter:blur(15px);
+      background:rgba(255,255,255,0.05);
+
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:700;
+      color:#00f0ff;
+      text-shadow:0 0 20px #00f0ff;
+      letter-spacing:2px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:white;
+      margin-left:30px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#00f0ff;
+    }
+
+    /* Hero */
+
+    .hero{
+      width:100%;
+      min-height:90vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      padding:60px 8%;
+    }
+
+    .hero-content{
+      max-width:1000px;
+    }
+
+    .hero h1{
+      font-size:78px;
+      line-height:1.2;
+      margin-bottom:25px;
+
+      background:linear-gradient(to right,#00f0ff,#ffffff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      color:#cbd5e1;
+      font-size:22px;
+      line-height:1.9;
+      margin-bottom:45px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      text-decoration:none;
+
+      background:linear-gradient(45deg,#00f0ff,#0077ff);
+
+      color:white;
+
+      padding:16px 38px;
+
+      border-radius:50px;
+
+      font-weight:600;
+
+      transition:0.5s;
+
+      box-shadow:0 0 25px rgba(0,255,255,0.4);
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-5px) scale(1.05);
+      box-shadow:0 0 40px rgba(0,255,255,0.7);
+    }
+
+    /* Subjects Section */
+
+    .subjects{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:55px;
+      margin-bottom:70px;
+      color:#00f0ff;
+    }
+
+    /* Cards */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(18px);
+
+      border-radius:35px;
+
+      padding:45px 35px;
+
+      transition:0.5s;
+
+      cursor:pointer;
+    }
+
+    .card:hover{
+      transform:translateY(-15px) scale(1.03);
+
+      border-color:#00f0ff;
+
+      box-shadow:0 0 35px rgba(0,255,255,0.25);
+    }
+
+    .card::before{
+      content:'';
+
+      position:absolute;
+
+      width:220px;
+      height:220px;
+
+      background:rgba(0,255,255,0.08);
+
+      border-radius:50%;
+
+      top:-80px;
+      right:-80px;
+    }
+
+    .card h2{
+      font-size:36px;
+      margin-bottom:20px;
+      color:#00f0ff;
+
+      position:relative;
+      z-index:1;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.9;
+      margin-bottom:35px;
+
+      position:relative;
+      z-index:1;
+    }
+
+    .open-btn{
+      display:inline-block;
+
+      text-decoration:none;
+
+      background:linear-gradient(45deg,#00f0ff,#0077ff);
+
+      color:white;
+
+      padding:13px 28px;
+
+      border-radius:40px;
+
+      font-weight:600;
+
+      transition:0.4s;
+
+      position:relative;
+      z-index:1;
+    }
+
+    .open-btn:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 20px rgba(0,255,255,0.5);
+    }
+
+    /* Features */
+
+    .features{
+      padding:100px 8%;
+    }
+
+    .feature-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .feature-box{
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:25px;
+
+      padding:35px;
+
+      text-align:center;
+
+      transition:0.5s;
+    }
+
+    .feature-box:hover{
+      transform:translateY(-10px);
+
+      border-color:#00f0ff;
+
+      box-shadow:0 0 30px rgba(0,255,255,0.15);
+    }
+
+    .feature-box h3{
+      color:#00f0ff;
+      margin-bottom:15px;
+      font-size:26px;
+    }
+
+    .feature-box p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* Footer */
+
+    footer{
+      text-align:center;
+
+      padding:40px;
+
+      margin-top:70px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      color:#94a3b8;
+      font-size:15px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .section-title{
+        font-size:38px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+
+    <div class="logo">NOTES HUB</div>
+
+    <div class="nav-links">
+
+      <a href="#subjects">Subjects</a>
+      <a href="#features">Features</a>
+
+    </div>
+
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Modern Study Notes Website
+      </h1>
+
+      <p>
+        English, Hindi, Home Science aur Political Science
+        ke detailed notes, chapter wise question answers
+        aur futuristic modern learning platform.
+      </p>
+
+      <a href="#subjects" class="hero-btn">
+        Open Subjects
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Subjects Section -->
+
+  <section class="subjects" id="subjects">
+
+    <h1 class="section-title">
+      Subjects
+    </h1>
+
+    <div class="cards">
+
+      <!-- English -->
+
+      <div class="card">
+
+        <h2>English</h2>
+
+        <p>
+          English literature, grammar,
+          poetry aur important question answers.
+        </p>
+
+        <a href="subjects/english/index.html" class="open-btn">
+          Open Subject
+        </a>
+
+      </div>
+
+      <!-- Hindi -->
+
+      <div class="card">
+
+        <h2>Hindi</h2>
+
+        <p>
+          Hindi chapters,
+          explanations aur chapter wise notes.
+        </p>
+
+        <a href="subjects/hindi/index.html" class="open-btn">
+          Open Subject
+        </a>
+
+      </div>
+
+      <!-- Home Science -->
+
+      <div class="card">
+
+        <h2>Home Science</h2>
+
+        <p>
+          Book wise chapters,
+          notes aur important question answers.
+        </p>
+
+        <a href="subjects/home-science/index.html" class="open-btn">
+          Open Subject
+        </a>
+
+      </div>
+
+      <!-- Political Science -->
+
+      <div class="card">
+
+        <h2>Political Science</h2>
+
+        <p>
+          Political science chapters,
+          summaries aur exam notes.
+        </p>
+
+        <a href="subjects/political-science/index.html" class="open-btn">
+          Open Subject
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Features -->
+
+  <section class="features" id="features">
+
+    <h1 class="section-title">
+      Website Features
+    </h1>
+
+    <div class="feature-container">
+
+      <div class="feature-box">
+
+        <h3>Chapter Wise Notes</h3>
+
+        <p>
+          Har subject ka alag detailed chapter section.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>Question Answers</h3>
+
+        <p>
+          Important exam question answers available.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>Modern UI</h3>
+
+        <p>
+          Smooth animations aur futuristic glow design.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <h3>Mobile Friendly</h3>
+
+        <p>
+          Website mobile aur computer dono me perfect chalegi.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    © 2026 Notes Hub | Modern Education Platform
+
+  </footer>
+
+</body>
+</html>
